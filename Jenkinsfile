@@ -2,7 +2,7 @@ node {
 	def app
 	
 	stage('Clone repository') {
-	checkout sc#
+	checkout sc
 }
 stage(' Build image') {
 app = docker.build("abinayamg/abinayagit")
