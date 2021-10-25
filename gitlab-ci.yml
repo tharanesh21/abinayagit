@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+build the code:
+  stage: build
+  script:
+      - mkdir firstfolder
+      - cd firstfolder
+      - touch build.txt
+      - echo "Hi Hello" >> build.txt
+      - echo "Bye Hello" >> build.txt
+  artifacts:
+    paths:
+      - firstfolder/
+test the code:
+  stage: test
+  script:
+    - ls
+    - test -f firstfolder/build.txt
+    - cd firstfolder
+    - cat build.txt
+    - grep "Hi Hello" build.txt
+    - grep "Bye Hello" build.txt
+
+
